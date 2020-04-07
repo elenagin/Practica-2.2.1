@@ -5,13 +5,21 @@
 #include "model.h"
 #include "view.h"
 
+
 int main()
 {
     int op, num_inputs, inputs;
 
     op = 0;
-    main_menu(&op, &num_inputs, &inputs);
-    //printf("op %d\nnum_inputs %d\ninputs %d\n", op, num_inputs, inputs);
-    
+    initial_menu();
+    tipoElemento *Primero = NULL;
+    main_menu(&Primero, &op, &num_inputs, &inputs);   
+//    InsertaInicio(&Primero);
+    Imprime(Primero);
+    final_menu();
     return 0;
 }
+
+
+
+//printf("op %d\nnum_inputs %d\ninputs %d\n", op, num_inputs, inputs);
