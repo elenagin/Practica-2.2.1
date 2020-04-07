@@ -14,12 +14,11 @@ int main()
     initial_menu();
     tipoElemento *Primero = NULL;
     main_menu(&Primero, &op, &num_inputs, &inputs);   
-//    InsertaInicio(&Primero);
+//  InsertaInicio(&Primero);
     Imprime(Primero);
     final_menu();
     return 0;
 }
-
 
 
 //printf("op %d\nnum_inputs %d\ninputs %d\n", op, num_inputs, inputs);
