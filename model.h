@@ -89,15 +89,83 @@ void AND(tipoElemento *Inicio)
 
 void XOR(tipoElemento *Inicio)
 {
-    printf("XOR");
+  tipoElemento *temp;
+  int t;
+  temp = Inicio;
+  t = temp->dato;
+  while (temp->sig != NULL)
+  {
+      if ((t == 0) && (temp->sig->dato == 0))
+      {
+          t = 0;
+      }
+      else if ((t == 0) && (temp->sig->dato == 1))
+      {
+          t = 1;
+      }
+      else if ((t == 1) && (temp->sig->dato == 0))
+      {
+          t = 1;
+      }
+      else if ((t == 1) && (temp->sig->dato == 1))
+      {
+          t = 0;
+      }
+      temp = temp->sig;
+  }
+
+  printf("t = %d\n", t);
 }
 
 void NOT(tipoElemento *Inicio)
 {
-    printf("NOT");
+  tipoElemento *temp;
+  int t;
+  temp = Inicio;
+  t = temp->dato;
+  printf("t =");
+  while (temp != NULL)
+  {
+      if (temp->dato == 0)
+      {
+          t = 1;
+      }
+      else if (temp->dato == 1)
+      {
+          t = 0;
+      }
+      temp = temp->sig;
+      printf(" %d ", t);
+    }
+    printf("\n");
 }
 
 void XNOR(tipoElemento *Inicio)
 {
-    printf("XNOR");
+  tipoElemento *temp;
+  int t;
+  temp = Inicio;
+  t = temp->dato;
+  while (temp->sig != NULL)
+  {
+      if ((t == 0) && (temp->sig->dato == 0))
+      {
+          t = 1;
+      }
+      else if ((t == 0) && (temp->sig->dato == 1))
+      {
+          t = 0;
+      }
+      else if ((t == 1) && (temp->sig->dato == 0))
+      {
+          t = 0;
+      }
+      else if ((t == 1) && (temp->sig->dato == 1))
+      {
+          t = 1;
+      }
+      temp = temp->sig;
+  }
+
+  printf("t = %d\n", t);
 }
